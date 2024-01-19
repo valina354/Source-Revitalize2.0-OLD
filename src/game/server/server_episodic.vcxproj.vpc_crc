@@ -5,7 +5,7 @@ e2cb7b09 server_episodic.vpc
 d5248a88 ..\..\game\server\server_base.vpc
 4832e67a ..\..\vpc_scripts\source_dll_base.vpc
 d752cf80 ..\..\vpc_scripts\platform_dirs.vpc
-e17a073f ..\..\vpc_scripts\source_base.vpc
+62afe80e ..\..\vpc_scripts\source_base.vpc
 006ecaf4 ..\..\vpc_scripts\source_dll_win32_base.vpc
 486b766d ..\..\vpc_scripts\version.vpc
 846102f0 ..\..\vpc_scripts\loadaddress.vpc

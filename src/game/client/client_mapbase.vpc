@@ -8,7 +8,7 @@ $Configuration
 {
 	$Compiler
 	{
-		$PreprocessorDefinitions		"$BASE;ASW_PROJECTED_TEXTURES;DYNAMIC_RTT_SHADOWS;GLOWS_ENABLE"
+		$PreprocessorDefinitions		"$BASE;ASW_PROJECTED_TEXTURES;DYNAMIC_RTT_SHADOWS;GLOWS_ENABLE;SOURCE_2013;GAMEPADUI"
 		
 		$PreprocessorDefinitions		"$BASE;MAPBASE_RPC;DISCORD_RPC;STEAM_RPC"	[$MAPBASE_RPC]
 		$PreprocessorDefinitions		"$BASE;MAPBASE_VSCRIPT"		[$MAPBASE_VSCRIPT]
@@ -93,6 +93,22 @@ $Project
 				$File	"$SRCDIR\game\shared\hl2mp\weapon_slam.cpp"
 				$File	"$SRCDIR\game\shared\hl2mp\weapon_slam.h"
 			}
+		}
+		
+		$Folder "Shader Editor"[$WIN32]
+		{
+		$Folder "Header Files"
+		{
+		$File "$SRCDIR\game\client\ShaderEditor\ISEdit_ModelRender.h"
+		$File "$SRCDIR\game\client\ShaderEditor\IVShaderEditor.h"
+		$File "$SRCDIR\game\client\ShaderEditor\ShaderEditorSystem.h"
+		$File "$SRCDIR\game\client\ShaderEditor\SEdit_ModelRender.h"
+		}
+		$Folder "Implementation Files"
+		{
+		$File "$SRCDIR\game\client\ShaderEditor\ShaderEditorSystem.cpp"
+		$File "$SRCDIR\game\client\ShaderEditor\SEdit_ModelRender.cpp"
+		}
 		}
 	}
 

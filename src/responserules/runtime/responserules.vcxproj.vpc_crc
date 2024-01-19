@@ -4,7 +4,7 @@ _Nc_VS2013/vpcgame:episodic_
 9727e4e2 response_rules.vpc
 30577f77 ..\..\vpc_scripts\source_lib_base.vpc
 d752cf80 ..\..\vpc_scripts\platform_dirs.vpc
-e17a073f ..\..\vpc_scripts\source_base.vpc
+62afe80e ..\..\vpc_scripts\source_base.vpc
 04a15247 ..\..\vpc_scripts\source_lib_win32_base.vpc
 486b766d ..\..\vpc_scripts\version.vpc
 fe1ec01f ..\..\vpc_scripts\source_lib_win32_debug.vpc

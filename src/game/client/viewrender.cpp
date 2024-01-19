@@ -83,6 +83,8 @@
 #include "C_Env_Projected_Texture.h"
 #include "c_lights.h"
 
+#include "shadereditor\shadereditorsystem.h"
+
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
 
@@ -1521,6 +1523,12 @@ void CViewRender::ViewDrawScene( bool bDrew3dSkybox, SkyboxVisibility_t nSkyboxV
 
 	DrawWorldAndEntities( drawSkybox, view, nClearFlags, pCustomVisibility );
 
+	VisibleFogVolumeInfo_t fogVolumeInfo;
+	render->GetVisibleFogVolume(view.origin, &fogVolumeInfo);
+	WaterRenderInfo_t info;
+	DetermineWaterRenderInfo(fogVolumeInfo, info);
+	g_ShaderEditorSystem->CustomViewRender(&g_CurrentViewID, fogVolumeInfo, info);
+
 	// Disable fog for the rest of the stuff
 	DisableFog();
 
@@ -2078,11 +2086,11 @@ void CViewRender::UpdateCascadedShadow(const CViewSetup &view)
 	cascadedShadowView.width = s_CascadedShadowDepthTexture->GetMappingWidth() / 2;
 	cascadedShadowView.height = s_CascadedShadowDepthTexture->GetMappingHeight();
 
-	cascadedShadowView.m_flAspectRatio = 1.0f;
+	cascadedShadowView.m_flAspectRatio = 4.0f;
 	cascadedShadowView.m_bDoBloomAndToneMapping = false;
-	cascadedShadowView.zFar = cascadedShadowView.zFarViewmodel = 2000.0f;
-	cascadedShadowView.zNear = cascadedShadowView.zNearViewmodel = 7.0f;
-	cascadedShadowView.fov = cascadedShadowView.fovViewmodel = 90.0f;
+	cascadedShadowView.zFar = cascadedShadowView.zFarViewmodel = 6000.0f;
+	cascadedShadowView.zNear = cascadedShadowView.zNearViewmodel = 1.0f;
+	cascadedShadowView.fov = cascadedShadowView.fovViewmodel = 100.0f;
 
 	struct ShadowConfig_t
 	{
@@ -2142,7 +2150,7 @@ void CViewRender::UpdateCascadedShadow(const CViewSetup &view)
 	}
 	else*/
 	{
-		pRenderContext->SetShadowDepthBiasFactors(8.0f, 0.0005f);
+		pRenderContext->SetShadowDepthBiasFactors(1.0f, 0.0005f);
 	}
 
 	for (int i = 0; i < iCascadedShadowCount; i++)
@@ -2158,8 +2166,8 @@ void CViewRender::UpdateCascadedShadow(const CViewSetup &view)
 		cascadedShadowView.y = 0;
 
 		Vector vecOrigin = vecCascadeOrigin + vecMainViewFwd * shadowConfig.flForwardOffset;
-		const float flViewFrustumWidthScale = shadowConfig.flOrthoSize * 2.0f / cascadedShadowView.width;
-		const float flViewFrustumHeightScale = shadowConfig.flOrthoSize * 2.0f / cascadedShadowView.height;
+		const float flViewFrustumWidthScale = shadowConfig.flOrthoSize * 8.0f / cascadedShadowView.width;
+		const float flViewFrustumHeightScale = shadowConfig.flOrthoSize * 8.0f / cascadedShadowView.height;
 		const float flFractionX = fmod(DotProduct(vecOrigin, vecRight), flViewFrustumWidthScale);
 		const float flFractionY = fmod(DotProduct(vecOrigin, vecUp), flViewFrustumHeightScale);
 		vecOrigin -= flFractionX * vecRight;
@@ -2393,6 +2401,7 @@ void CViewRender::RenderView( const CViewSetup &view, int nClearFlags, int whatT
 			if ( ( bDrew3dSkybox = pSkyView->Setup( view, &nClearFlags, &nSkyboxVisible ) ) != false )
 			{
 				AddViewToScene( pSkyView );
+				g_ShaderEditorSystem->UpdateSkymask(false, view.x, view.y, view.width, view.height);
 			}
 			SafeRelease( pSkyView );
 #endif
@@ -2457,6 +2466,8 @@ void CViewRender::RenderView( const CViewSetup &view, int nClearFlags, int whatT
 #endif
 		DrawViewModels( view, whatToDraw & RENDERVIEW_DRAWVIEWMODEL );
 
+		g_ShaderEditorSystem->UpdateSkymask(bDrew3dSkybox, view.x, view.y, view.width, view.height);
+
 		DrawUnderwaterOverlay();
 
 		PixelVisibility_EndScene();
@@ -2493,6 +2504,8 @@ void CViewRender::RenderView( const CViewSetup &view, int nClearFlags, int whatT
 			}
 			pRenderContext.SafeRelease();
 		}
+
+		g_ShaderEditorSystem->CustomPostRender();
 
 		// And here are the screen-space effects
 

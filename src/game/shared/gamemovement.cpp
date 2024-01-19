@@ -50,6 +50,11 @@ ConVar xc_uncrouch_on_jump( "xc_uncrouch_on_jump", "1", FCVAR_ARCHIVE, "Uncrouch
 ConVar player_limit_jump_speed( "player_limit_jump_speed", "1", FCVAR_REPLICATED );
 #endif
 
+// Accelerated back hopping (un-)fix
+// If enabled, standard backjumping behaviour will be enabled.
+// If disabled, player will save his speed by bunnyjumping (its hard but possible) but will be disallowed to boost
+ConVar sv_abh("sv_abh", "0", FCVAR_ARCHIVE | FCVAR_REPLICATED, "Accelerated back hopping (1 - on, 0 - off)");
+
 // option_duck_method is a carrier convar. Its sole purpose is to serve an easy-to-flip
 // convar which is ONLY set by the X360 controller menu to tell us which way to bind the
 // duck controls. Its value is meaningless anytime we don't have the options window open.
@@ -2468,11 +2473,10 @@ bool CGameMovement::CheckJumpButton( void )
 		mv->m_vecVelocity[2] += flGroundFactor * flMul;  // 2 * gravity * height
 	}
 
-	// Add a little forward velocity based on your current forward velocity - if you are not sprinting.
-#if defined( HL2_DLL ) || defined( HL2_CLIENT_DLL )
-	if ( gpGlobals->maxClients == 1 )
-	{
-		CHLMoveData *pMoveData = ( CHLMoveData* )mv;
+	// ABH
+	if (sv_abh.GetBool()) {
+		// Add a little forward velocity based on your current forward velocity - if you are not sprinting.
+		CHLMoveData *pMoveData = (CHLMoveData*)mv;
 		Vector vecForward;
 		AngleVectors( mv->m_vecViewAngles, &vecForward );
 		vecForward.z = 0;
@@ -2495,9 +2499,22 @@ bool CGameMovement::CheckJumpButton( void )
 			flSpeedAddition *= -1.0f;
 
 		// Add it on
-		VectorAdd( (vecForward*flSpeedAddition), mv->m_vecVelocity, mv->m_vecVelocity );
+		VectorAdd((vecForward * flSpeedAddition), mv->m_vecVelocity, mv->m_vecVelocity);
 	}
-#endif
+	else {
+		CHLMoveData *pMoveData = (CHLMoveData*)mv;
+		float flSpeedBoostPerc = (!pMoveData->m_bIsSprinting && !player->m_Local.m_bDucked) ? 0.5f : 0.1f;
+		float flMaxSpeed = mv->m_flMaxSpeed + (mv->m_flMaxSpeed * flSpeedBoostPerc);
+		// Cap velocity...
+		Vector velocity = mv->m_vecVelocity;
+		float zspeed = velocity.z;
+		velocity.z = 0;
+
+		if (velocity.Length() > flMaxSpeed) {
+			mv->m_vecVelocity = velocity.Normalized() * flMaxSpeed;
+			mv->m_vecVelocity.z = zspeed;
+		}
+	}
 
 	FinishGravity();
 

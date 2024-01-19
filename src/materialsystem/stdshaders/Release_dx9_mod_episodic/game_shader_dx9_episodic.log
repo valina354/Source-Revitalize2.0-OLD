@@ -1,4 +1,4 @@
-﻿Build started 1/19/2024 2:58:34 PM.
+﻿Build started 1/19/2024 8:14:09 PM.
      1>Project "D:\sourcesdk\sourcerevitalize2a\Map-Labs-master\sp\src\materialsystem\stdshaders\game_shader_dx9_episodic.vcxproj" on node 2 (Build target(s)).
      1>PreBuildEvent:
          if EXIST ..\..\..\game\mod_episodic\bin\.\game_shader_dx9.dll for /f "delims=" %%A in ('attrib "..\..\..\game\mod_episodic\bin\.\game_shader_dx9.dll"') do set valveTmpIsReadOnly="%%A"
@@ -9,8 +9,31 @@
          
          :VCEnd
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\common /I..\..\public /I..\..\public\tier0 /I..\..\public\tier1 /Ifxctmp9 /Ivshtmp9 /Zi /nologo /W4 /WX /MP /O2 /Ob2 /Oi /Ot /Oy- /D VPC /D RAD_TELEMETRY_DISABLED /D MAPBASE /D WIN32 /D _WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D _ALLOW_RUNTIME_LIBRARY_MISMATCH /D _ALLOW_ITERATOR_DEBUG_LEVEL_MISMATCH /D _ALLOW_MSC_VER_MISMATCH /D _USING_V110_SDK71_ /D _WINDLL /D _MBCS /D COMPILER_MSVC32 /D COMPILER_MSVC32 /D COMPILER_MSVC /D _DLL_EXT=.dll /D DLLNAME=game_shader_dx9 /D BINK_VIDEO /D AVI_VIDEO /D WMV_VIDEO /D DEV_BUILD /D FRAME_POINTER_OMISSION_DISABLED /D STDSHADER_DX9_DLL_EXPORT /D FAST_MATERIALVAR_ACCESS /D GAME_SHADER_DLL /D USE_ACTUAL_DX /D _EXTERNAL_DLL_EXT=.dll /D VPCGAMECAPS=EPISODIC /D "PROJECTDIR=D:\sourcesdk\sourcerevitalize2a\Map-Labs-master\sp\src\materialsystem\stdshaders" /D _DLL_EXT=.dll /D VPCGAME=episodic /D SOURCE1=1 /GF /Gm- /MT /GS /Gy /arch:SSE /fp:fast /Zc:wchar_t /Zc:forScope /GR /Fo"Release_dx9_mod_episodic\/" /Fd"Release_dx9_mod_episodic\/vc120.pdb" /Gd /TP /wd4316 /analyze- /FC /errorReport:prompt /Zm200 /d2Zi+ /Gw skin_dx9_helper.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\common /I..\..\public /I..\..\public\tier0 /I..\..\public\tier1 /Ifxctmp9 /Ivshtmp9 /Zi /nologo /W4 /WX /MP /O2 /Ob2 /Oi /Ot /Oy- /D VPC /D RAD_TELEMETRY_DISABLED /D MAPBASE /D WIN32 /D _WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D _ALLOW_RUNTIME_LIBRARY_MISMATCH /D _ALLOW_ITERATOR_DEBUG_LEVEL_MISMATCH /D _ALLOW_MSC_VER_MISMATCH /D _USING_V110_SDK71_ /D _WINDLL /D _MBCS /D COMPILER_MSVC32 /D COMPILER_MSVC32 /D COMPILER_MSVC /D _DLL_EXT=.dll /D DLLNAME=game_shader_dx9 /D BINK_VIDEO /D AVI_VIDEO /D WMV_VIDEO /D DEV_BUILD /D FRAME_POINTER_OMISSION_DISABLED /D STDSHADER_DX9_DLL_EXPORT /D FAST_MATERIALVAR_ACCESS /D GAME_SHADER_DLL /D USE_ACTUAL_DX /D _EXTERNAL_DLL_EXT=.dll /D VPCGAMECAPS=EPISODIC /D "PROJECTDIR=D:\sourcesdk\sourcerevitalize2a\Map-Labs-master\sp\src\materialsystem\stdshaders" /D _DLL_EXT=.dll /D VPCGAME=episodic /D SOURCE1=1 /GF /Gm- /MT /GS /Gy /arch:SSE /fp:fast /Zc:wchar_t /Zc:forScope /GR /Fo"Release_dx9_mod_episodic\/" /Fd"Release_dx9_mod_episodic\/vc120.pdb" /Gd /TP /wd4316 /analyze- /FC /errorReport:prompt /Zm200 /d2Zi+ /Gw BaseVSShader.cpp Bloom.cpp cloak_blended_pass_helper.cpp depthwrite.cpp emissive_scroll_blended_pass_helper.cpp example_model_dx9.cpp example_model_dx9_helper.cpp flesh_interior_blended_pass_helper.cpp light_volumetrics.cpp lightmappedgeneric_dx9.cpp lightmappedgeneric_dx9_helper.cpp refract.cpp refract_dx9_helper.cpp screenspace_general.cpp shadow.cpp shadowbuild_dx9.cpp shadowmodel_dx9.cpp skin_dx9_helper.cpp splinerope.cpp teeth.cpp vertexlitgeneric_dx9.cpp vertexlitgeneric_dx9_helper.cpp water.cpp worldvertextransition.cpp
+         BaseVSShader.cpp
+         Bloom.cpp
+         cloak_blended_pass_helper.cpp
+         depthwrite.cpp
+         emissive_scroll_blended_pass_helper.cpp
+         example_model_dx9.cpp
+         example_model_dx9_helper.cpp
+         flesh_interior_blended_pass_helper.cpp
+         light_volumetrics.cpp
+         lightmappedgeneric_dx9.cpp
+         lightmappedgeneric_dx9_helper.cpp
+         refract.cpp
+         refract_dx9_helper.cpp
+         screenspace_general.cpp
+         shadow.cpp
+         shadowbuild_dx9.cpp
+         shadowmodel_dx9.cpp
          skin_dx9_helper.cpp
+         splinerope.cpp
+         teeth.cpp
+         vertexlitgeneric_dx9.cpp
+         vertexlitgeneric_dx9_helper.cpp
+         water.cpp
+         worldvertextransition.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Release_dx9_mod_episodic\\game_shader_dx9.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:..\..\lib\common\. /LIBPATH:..\..\lib\public\. shell32.lib user32.lib advapi32.lib gdi32.lib comdlg32.lib ole32.lib version.lib winmm.lib /NODEFAULTLIB:libc /NODEFAULTLIB:libcd /NODEFAULTLIB:libcmtd /MANIFEST:NO /DEBUG /PDB:"Release_dx9_mod_episodic\/game_shader_dx9.pdb" /SUBSYSTEM:WINDOWS,"5.01" /OPT:REF /OPT:NOICF /TLBID:1 /DYNAMICBASE:NO /NXCOMPAT /IMPLIB:"Release_dx9_mod_episodic\game_shader_dx9.lib" /MACHINE:X86 /SAFESEH:NO  /ignore:4221 /DLL Release_dx9_mod_episodic\\pointeroverride.obj
          Release_dx9_mod_episodic\/BaseVSShader.obj
@@ -66,4 +89,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.31
+Time Elapsed 00:00:07.00

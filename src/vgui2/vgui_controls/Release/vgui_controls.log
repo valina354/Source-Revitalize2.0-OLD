@@ -1,5 +1,5 @@
-﻿Build started 1/19/2024 2:54:40 PM.
-     1>Project "D:\sourcesdk\sourcerevitalize2a\Map-Labs-master\sp\src\vgui2\vgui_controls\vgui_controls.vcxproj" on node 2 (Build target(s)).
+﻿Build started 1/19/2024 8:14:05 PM.
+     1>Project "D:\sourcesdk\sourcerevitalize2a\Map-Labs-master\sp\src\vgui2\vgui_controls\vgui_controls.vcxproj" on node 3 (Build target(s)).
      1>PreBuildEvent:
          if EXIST ..\..\lib\public\.\vgui_controls.lib ( for /f "delims=" %%A in ('attrib "..\..\lib\public\.\vgui_controls.lib"') do set valveTmpIsReadOnly="%%A"
          ) else ( if not EXIST ..\..\lib\public\. mkdir ..\..\lib\public\. )
@@ -14,8 +14,82 @@
          
          :VCEnd
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\common /I..\..\public /I..\..\public\tier0 /I..\..\public\tier1 /Igenerated_proto /I"..\..\thirdparty\protobuf-2.3.0\src" /I..\..\thirdparty /I..\..\thirdparty\cef /Igenerated_proto /Z7 /nologo /W4 /WX /MP /O2 /Ob2 /Oi /Ot /Oy- /D VPC /D RAD_TELEMETRY_DISABLED /D MAPBASE /D WIN32 /D _WIN32 /D NDEBUG /D _LIB /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D _ALLOW_RUNTIME_LIBRARY_MISMATCH /D _ALLOW_ITERATOR_DEBUG_LEVEL_MISMATCH /D _ALLOW_MSC_VER_MISMATCH /D _USING_V110_SDK71_ /D _MBCS /D COMPILER_MSVC32 /D COMPILER_MSVC32 /D COMPILER_MSVC /D _DLL_EXT=.dll /D LIBNAME=vgui_controls /D BINK_VIDEO /D AVI_VIDEO /D WMV_VIDEO /D DEV_BUILD /D FRAME_POINTER_OMISSION_DISABLED /D _EXTERNAL_DLL_EXT=.dll /D VPCGAMECAPS=EPISODIC /D "PROJECTDIR=D:\sourcesdk\sourcerevitalize2a\Map-Labs-master\sp\src\vgui2\vgui_controls" /D _DLL_EXT=.dll /D VPCGAME=episodic /D SOURCE1=1 /GF /Gm- /MT /GS /Gy /arch:SSE /fp:fast /Zc:wchar_t /Zc:forScope /GR /openmp- /Fo".\Release\.\/" /Fd".\Release\.\/vc120.pdb" /Gd /TP /wd4316 /analyze- /FC /errorReport:prompt /d2Zi+ /Gw ..\..\vgui2\game_controls\floatslider.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\common /I..\..\public /I..\..\public\tier0 /I..\..\public\tier1 /Igenerated_proto /I"..\..\thirdparty\protobuf-2.3.0\src" /I..\..\thirdparty /I..\..\thirdparty\cef /Igenerated_proto /Z7 /nologo /W4 /WX /MP /O2 /Ob2 /Oi /Ot /Oy- /D VPC /D RAD_TELEMETRY_DISABLED /D MAPBASE /D WIN32 /D _WIN32 /D NDEBUG /D _LIB /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D _ALLOW_RUNTIME_LIBRARY_MISMATCH /D _ALLOW_ITERATOR_DEBUG_LEVEL_MISMATCH /D _ALLOW_MSC_VER_MISMATCH /D _USING_V110_SDK71_ /D _MBCS /D COMPILER_MSVC32 /D COMPILER_MSVC32 /D COMPILER_MSVC /D _DLL_EXT=.dll /D LIBNAME=vgui_controls /D BINK_VIDEO /D AVI_VIDEO /D WMV_VIDEO /D DEV_BUILD /D FRAME_POINTER_OMISSION_DISABLED /D _EXTERNAL_DLL_EXT=.dll /D VPCGAMECAPS=EPISODIC /D "PROJECTDIR=D:\sourcesdk\sourcerevitalize2a\Map-Labs-master\sp\src\vgui2\vgui_controls" /D _DLL_EXT=.dll /D SOURCE1=1 /D VPCGAME=episodic /GF /Gm- /MT /GS /Gy /arch:SSE /fp:fast /Zc:wchar_t /Zc:forScope /GR /openmp- /Fo".\Release\.\/" /Fd".\Release\.\/vc120.pdb" /Gd /TP /wd4316 /analyze- /FC /errorReport:prompt /d2Zi+ /Gw ..\..\vgui2\game_controls\floatslider.cpp ..\..\vgui2\src\vgui_key_translation.cpp AnalogBar.cpp AnimatingImagePanel.cpp AnimationController.cpp BitmapImagePanel.cpp BuildGroup.cpp BuildModeDialog.cpp Button.cpp CheckButton.cpp CheckButtonList.cpp CircularProgressBar.cpp ComboBox.cpp ControllerMap.cpp CvarToggleCheckButton.cpp DirectorySelectDialog.cpp Divider.cpp EditablePanel.cpp ExpandButton.cpp FileOpenDialog.cpp FileOpenStateMachine.cpp FocusNavGroup.cpp Frame.cpp GraphPanel.cpp HTML.cpp Image.cpp ImagePanel.cpp InputDialog.cpp KeyBindingHelpDialog.cpp KeyBoardEditorDialog.cpp KeyRepeat.cpp Label.cpp ListPanel.cpp ListViewPanel.cpp Menu.cpp MenuBar.cpp MenuButton.cpp MenuItem.cpp MessageBox.cpp MessageDialog.cpp Panel.cpp PanelListPanel.cpp PerforceFileExplorer.cpp PerforceFileList.cpp ProgressBar.cpp ProgressBox.cpp PropertyDialog.cpp PropertyPage.cpp PropertySheet.cpp QueryBox.cpp RadioButton.cpp RichText.cpp RotatingProgressBar.cpp ScalableImagePanel.cpp ScrollBar.cpp ScrollBarSlider.cpp ScrollableEditablePanel.cpp SectionedListPanel.cpp Slider.cpp Splitter.cpp TextEntry.cpp TextImage.cpp ToggleButton.cpp ToolWindow.cpp Tooltip.cpp TreeView.cpp TreeViewListControl.cpp URLLabel.cpp WizardPanel.cpp WizardSubPanel.cpp consoledialog.cpp controls.cpp perforcefilelistframe.cpp savedocumentquery.cpp subrectimage.cpp
          floatslider.cpp
+         vgui_key_translation.cpp
+         AnalogBar.cpp
+         AnimatingImagePanel.cpp
+         AnimationController.cpp
+         BitmapImagePanel.cpp
+         BuildGroup.cpp
+         BuildModeDialog.cpp
+         Button.cpp
+         CheckButton.cpp
+         CheckButtonList.cpp
+         CircularProgressBar.cpp
+         ComboBox.cpp
+         ControllerMap.cpp
+         CvarToggleCheckButton.cpp
+         DirectorySelectDialog.cpp
+         Divider.cpp
+         EditablePanel.cpp
+         ExpandButton.cpp
+         FileOpenDialog.cpp
+         FileOpenStateMachine.cpp
+         FocusNavGroup.cpp
+         Frame.cpp
+         GraphPanel.cpp
+         HTML.cpp
+         Image.cpp
+         ImagePanel.cpp
+         InputDialog.cpp
+         KeyBindingHelpDialog.cpp
+         KeyBoardEditorDialog.cpp
+         KeyRepeat.cpp
+         Label.cpp
+         ListPanel.cpp
+         ListViewPanel.cpp
+         Menu.cpp
+         MenuBar.cpp
+         MenuButton.cpp
+         MenuItem.cpp
+         MessageBox.cpp
+         MessageDialog.cpp
+         Panel.cpp
+         PanelListPanel.cpp
+         PerforceFileExplorer.cpp
+         PerforceFileList.cpp
+         ProgressBar.cpp
+         ProgressBox.cpp
+         PropertyDialog.cpp
+         PropertyPage.cpp
+         PropertySheet.cpp
+         QueryBox.cpp
+         RadioButton.cpp
+         RichText.cpp
+         RotatingProgressBar.cpp
+         ScalableImagePanel.cpp
+         ScrollBar.cpp
+         ScrollBarSlider.cpp
+         ScrollableEditablePanel.cpp
+         SectionedListPanel.cpp
+         Slider.cpp
+         Splitter.cpp
+         TextEntry.cpp
+         TextImage.cpp
+         ToggleButton.cpp
+         ToolWindow.cpp
+         Tooltip.cpp
+         TreeView.cpp
+         TreeViewListControl.cpp
+         URLLabel.cpp
+         WizardPanel.cpp
+         WizardSubPanel.cpp
+         consoledialog.cpp
+         controls.cpp
+         perforcefilelistframe.cpp
+         savedocumentquery.cpp
+         subrectimage.cpp
        Lib:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"..\..\lib\public\.\vgui_controls.lib" /NOLOGO  /ignore:4221 .\Release\.\/AnalogBar.obj
          .\Release\.\/AnimatingImagePanel.obj
@@ -100,4 +174,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.96
+Time Elapsed 00:00:07.41

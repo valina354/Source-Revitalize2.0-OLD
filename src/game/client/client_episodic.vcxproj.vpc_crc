@@ -5,7 +5,7 @@ d8538560 client_episodic.vpc
 dc904f13 ..\..\game\client\client_base.vpc
 4832e67a ..\..\vpc_scripts\source_dll_base.vpc
 d752cf80 ..\..\vpc_scripts\platform_dirs.vpc
-e17a073f ..\..\vpc_scripts\source_base.vpc
+62afe80e ..\..\vpc_scripts\source_base.vpc
 006ecaf4 ..\..\vpc_scripts\source_dll_win32_base.vpc
 486b766d ..\..\vpc_scripts\version.vpc
 846102f0 ..\..\vpc_scripts\loadaddress.vpc
@@ -16,5 +16,5 @@ e17a073f ..\..\vpc_scripts\source_base.vpc
 346bda4a ..\..\vpc_scripts\source_video_base.vpc
 c209a88e ..\..\vpc_scripts\protobuf_builder.vpc
 d1c158fe ..\..\game\protobuf_include.vpc
-2c87cef2 ..\..\game\client\client_mapbase.vpc
+01c0f471 ..\..\game\client\client_mapbase.vpc
 30bf2216 ..\..\vpc_scripts\definitions\win32_2010.def
